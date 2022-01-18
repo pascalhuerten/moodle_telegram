@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/mchurchward/moodle-message_output_telegram.png?branch=MOODLE_32_BETA)](https://travis-ci.org/mchurchward/moodle-message_output_telegram)
+This is a telegram plugin for moodle created by Mike Churchward, with minor changes to allow setting and deleting a custom webhook. By adding a third parameter to the send_message function, custom params can now be set to directly specify for example the chatid or reply_markup, to enable the creation of custom telegram keyboards. Also a german translation was added to the lang files.
+
+-----
 
 This plugin experiments with providing a Moodle message provider plugin for Telegram.
 
