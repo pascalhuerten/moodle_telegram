@@ -65,10 +65,6 @@ class manager {
             return true;
         }
 
-        if (!$params) {
-            $params = array();
-        }
-
         if ($userid) {
             $params['chat_id'] = get_user_preferences('message_processor_telegram_chatid', '', $userid);
         }

@@ -88,14 +88,14 @@ if ($ADMIN->fulltree) {
         PARAM_TEXT
     ));
     if (!empty($sitebottoken)) {
-        $settings->add($webhook_setting = new admin_setting_configtext(
+        $settings->add($webhooksetting = new admin_setting_configtext(
             'message_telegram/webhook',
             get_string('webhook', 'message_telegram'),
             get_string('webhookdesc', 'message_telegram'),
             $webhook,
             PARAM_URL
         ));
+        // Set a new webhook if message_telegram/webhook config changes.
+        $webhooksetting->set_updatedcallback(array($telegrammanager, 'set_webhook'));
     }
-    // Set a new webhook if message_telegram/webhook config changes.
-    $webhook_setting->set_updatedcallback(array($telegrammanager, 'set_webhook'));
 }
